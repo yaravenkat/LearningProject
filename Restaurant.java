@@ -11,7 +11,7 @@ public class Restaurant {     // Resturent_Management_System_Java_Code
      public static void full(){
 
          System.out.println("\t\t\t\t\t\t-----------------------------------");
-         System.out.println("\t\t\t\t\t\t\t NAGA RESTAURANT");
+         System.out.println("\t\t\t\t\t\t\t YARA RESTAURANT");
          System.out.println("\t\t\t\t\t\t===================================");
          System.out.println("\n\n\t\t\t1.Admin");
          System.out.println("\t\t\t2.Waiter");
