@@ -191,3 +191,144 @@ public class EvenOddArray {
     }
 }
 
+
+5 .Here's the Java program that checks if a given string has balanced brackets:
+
+import java.util.Stack;
+
+public class BalancedBrackets {
+
+    public static void main(String[] args) {
+        System.out.println(isBalanced("{[()]}")); // true
+        System.out.println(isBalanced("{[(])}")); // false
+        System.out.println(isBalanced("{{[[(())]]}}")); // true
+        System.out.println(isBalanced("{[}")); // false
+    }
+
+    public static boolean isBalanced(String str) {
+        // Stack to hold opening brackets
+        Stack<Character> stack = new Stack<>();
+
+        // Traverse through the string
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            // If it's an opening bracket, push it onto the stack
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack.push(ch);
+            }
+            // If it's a closing bracket
+            else if (ch == ')' || ch == '}' || ch == ']') {
+                // If the stack is empty or the top of the stack doesn't match the corresponding opening bracket
+                if (stack.isEmpty()) {
+                    return false;
+                }
+
+                // Pop from stack and check if it matches the corresponding opening bracket
+                char top = stack.pop();
+                if ((ch == ')' && top != '(') ||
+                    (ch == '}' && top != '{') ||
+                    (ch == ']' && top != '[')) {
+                    return false;
+                }
+            }
+        }
+
+        // If the stack is empty, all brackets matched; otherwise, they didn't
+        return stack.isEmpty();
+    }
+}
+
+
+6. what is the output for the below
+
+public void test(){
+    try{
+        System.out.println("1");
+        System.out.println("2");
+        return;
+    }catch(Exception ex){
+        System.out.println("3");
+    }
+    finally{
+        System.out.println("4");
+    }
+}
+
+output : 1,2,4
+
+7. what is the output for the below
+
+   public class Employee {
+    private String firstName;
+
+    public Employee(String firstName){
+        super();
+        this.firstName = firstName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    private static void method1(Employee e){
+        e.setFirstName("ghi");
+    }
+
+    public static void main(String[] args) {
+        Employee e1 = new Employee("abc");
+        Employee e2 = e1; // e2 now references the same object as e1
+        e2.setFirstName("def"); // e1's firstName is now "def" because e2 is pointing to the same object as e1
+        System.out.println(e1.getFirstName()); // prints "def"
+
+        method1(e2); // This changes e1's firstName to "ghi" via e2, because e2 references e1
+        System.out.println(e1.getFirstName()); // prints "ghi"
+
+        Employee e3 = new Employee("ghi");  // e3 is a new object with the firstName "ghi"
+        Set<Employee> empSet = new HashSet<>();
+        empSet.add(e1);  // Adds e1 to the set
+        empSet.add(e2);  // e2 is the same as e1, so e1 and e2 are treated as the same object
+        empSet.add(e3);  // Adds e3 to the set
+
+        System.out.println(empSet.size());  // Size of the set
+    }
+}
+
+Output is like below
+def
+ghi
+2
+
+
+8.Given an integer array "nums", find the largest sum, from a arrya/subarray and return its sum.
+
+public class MaximumSubarray {
+    public static void main(String[] args) {
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        
+        int result = maxSubArray(nums);
+        System.out.println("Largest sum: " + result);  // Output: 6
+    }
+
+    public static int maxSubArray(int[] nums) {
+        // Initialize currentSum and maxSum with the first element
+        int currentSum = nums[0];
+        int maxSum = nums[0];
+        
+        // Loop through the array starting from the second element
+        for (int i = 1; i < nums.length; i++) {
+            // Update currentSum to be either the current element itself
+            // or currentSum + current element (whichever is greater)
+            currentSum = Math.max(nums[i], currentSum + nums[i]);
+            
+            // Update maxSum to be the maximum of itself or the new currentSum
+            maxSum = Math.max(maxSum, currentSum);
+        }
+        
+        return maxSum;
+    }
+}
