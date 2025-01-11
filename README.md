@@ -341,4 +341,4 @@ long count = Stream.concat(list1.stream(), list2.stream()) // Concatenate the st
             .count(); // Count the results
         
         System.out.println("Count of employees joined in the last 6 months: " + count);
-    }
+    }	
