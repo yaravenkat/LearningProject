@@ -9,8 +9,7 @@ int[] array = {2, 7, 11, 15};
 int target = 9;
 Expected output:
 [0, 1]
-
-
+```java
 public class TwoSum {
 
   public static void main(String[] args) {
@@ -50,7 +49,7 @@ public class TwoSum {
 2. What are the challenges you faced while developing the application
 3.UseMemo and useCallback difference in reactjs
 4.Write a Java program that separates 0s on the left hand side and 1s on the right hand side from a random array of 0s and 1.
-
+```java
 // Import the necessary Java utility class for working with arrays.
 import java.util.Arrays;
 
@@ -117,8 +116,7 @@ Output:
 [java, ajav] contains same character
 
 [abcd, dcba] contains same character
-
-
+```java
 import java.util.*;
 
 public class GroupStringsBySameCharacters {
@@ -153,7 +151,7 @@ public class GroupStringsBySameCharacters {
 
 
 5.Shift all even numbers to left side of array and odd number to right side java
-
+```java
 public class EvenOddArray {
     public static void main(String[] args) {
         int[] arr = {12, 34, 45, 9, 8, 90, 3};
@@ -193,7 +191,7 @@ public class EvenOddArray {
 
 
 5 .Here's the Java program that checks if a given string has balanced brackets:
-
+```java
 import java.util.Stack;
 
 public class BalancedBrackets {
@@ -241,7 +239,7 @@ public class BalancedBrackets {
 
 
 6. what is the output for the below
-
+```java
 public void test(){
     try{
         System.out.println("1");
@@ -258,8 +256,8 @@ public void test(){
 output : 1,2,4
 
 7. what is the output for the below
-
-   public class Employee {
+```java
+public class Employee {
     private String firstName;
 
     public Employee(String firstName){
@@ -305,7 +303,7 @@ ghi
 
 
 8.Given an integer array "nums", find the largest sum, from a arrya/subarray and return its sum.
-     
+```java
 public class MaximumSubarray {
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
