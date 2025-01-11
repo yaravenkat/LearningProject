@@ -392,3 +392,29 @@ public class Main {
     }
 }
 ```
+
+Find 2nd non-repeated char from input string, using Java8 stream
+String input = "Java is my programming language"
+Output = v
+```java
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class SecondNonRepeat {
+    public static void main(String[] args) {
+        String input = "Java is my programming language";
+
+        // Single statement to get the second non-repeated character while preserving the order
+        input.toLowerCase().chars()
+                .mapToObj(c -> (char) c)  // Convert int to Character
+                .filter(Character::isLetter)  // Filter only alphabetic characters
+                .collect(Collectors.groupingBy(c -> c, LinkedHashMap::new, Collectors.counting()))  // Preserve order with LinkedHashMap
+                .entrySet().stream()
+                .filter(entry -> entry.getValue() == 1)  // Filter for non-repeated characters
+                .map(Map.Entry::getKey)  // Get the characters
+                .skip(1)  // Skip the first non-repeated character
+                .findFirst()  // Get the second non-repeated character (if any)
+                .ifPresent(System.out::println);  // Prints 'v' if found
+    }
+}
+```
