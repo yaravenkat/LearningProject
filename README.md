@@ -43,8 +43,7 @@ public class TwoSum {
     // If no solution is found, return an empty array (or throw an exception)
     return new int[] {};
   }
-
-
+``` 
 
 2. What are the challenges you faced while developing the application
 3.UseMemo and useCallback difference in reactjs
@@ -100,7 +99,7 @@ public class Main {
         return arr;
      }       
 }
-
+``` 
 
 
 We have a input array as
@@ -148,7 +147,7 @@ public class GroupStringsBySameCharacters {
         }
     }
 }
-
+``` 
 
 5.Shift all even numbers to left side of array and odd number to right side java
 ```java
@@ -188,7 +187,7 @@ public class EvenOddArray {
         }
     }
 }
-
+``` 
 
 5 .Here's the Java program that checks if a given string has balanced brackets:
 ```java
@@ -236,7 +235,7 @@ public class BalancedBrackets {
         return stack.isEmpty();
     }
 }
-
+``` 
 
 6. what is the output for the below
 ```java
@@ -252,7 +251,7 @@ public void test(){
         System.out.println("4");
     }
 }
-
+``` 
 output : 1,2,4
 
 7. what is the output for the below
@@ -295,7 +294,7 @@ public class Employee {
         System.out.println(empSet.size());  // Size of the set
     }
 }
-
+``` 
 Output is like below
 def
 ghi
@@ -330,7 +329,7 @@ public class MaximumSubarray {
         return maxSum;
     }
 }
-
+``` 
 
 
 9. to get the employes count who joined last 6 months
@@ -341,3 +340,4 @@ public class MaximumSubarray {
         
         System.out.println("Count of employees joined in the last 6 months: " + count);
     }	
+``` 
