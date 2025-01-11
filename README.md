@@ -305,7 +305,7 @@ ghi
 
 
 8.Given an integer array "nums", find the largest sum, from a arrya/subarray and return its sum.
-
+     
 public class MaximumSubarray {
     public static void main(String[] args) {
         int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
@@ -336,6 +336,7 @@ public class MaximumSubarray {
 
 
 9. to get the employes count who joined last 6 months
+   ```java
 long count = Stream.concat(list1.stream(), list2.stream()) // Concatenate the streams
             .filter(e -> e.getJoiningDate().isAfter(LocalDate.now().minusMonths(6))) // Filter based on date
             .count(); // Count the results
