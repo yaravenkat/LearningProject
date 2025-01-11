@@ -332,3 +332,13 @@ public class MaximumSubarray {
         return maxSum;
     }
 }
+
+
+
+9. to get the employes count who joined last 6 months
+long count = Stream.concat(list1.stream(), list2.stream()) // Concatenate the streams
+            .filter(e -> e.getJoiningDate().isAfter(LocalDate.now().minusMonths(6))) // Filter based on date
+            .count(); // Count the results
+        
+        System.out.println("Count of employees joined in the last 6 months: " + count);
+    }
