@@ -365,33 +365,7 @@ public class Indexfind {
     }
 }
 ```
-Find 2nd non-repeated char from input string, using Java8 stream
-String input = "Java is my programming language"
-Output = v
 
-```java
-import java.util.*;
-import java.util.stream.Collectors;
-
-public class Main {
-    public static void main(String[] args) {
-        String input = "Java is my programming language";
-
-        // Get the second non-repeated character using streams
-        Optional<Character> secondNonRepeatedChar = input.chars()  // Convert to IntStream
-            .mapToObj(c -> (char) c)  // Convert int to Character
-            .collect(Collectors.groupingBy(c -> c, Collectors.counting()))  // Count occurrences of each character
-            .entrySet().stream()  // Stream the entries
-            .filter(entry -> entry.getValue() == 1)  // Filter out non-repeated characters
-            .map(Map.Entry::getKey)  // Get the character (key)
-            .skip(1)  // Skip the first non-repeated character
-            .findFirst();  // Get the second one (if it exists)
-
-        // Output the result
-        secondNonRepeatedChar.ifPresent(System.out::println);  // Prints 'v' if found
-    }
-}
-```
 
 Find 2nd non-repeated char from input string, using Java8 stream
 String input = "Java is my programming language"
