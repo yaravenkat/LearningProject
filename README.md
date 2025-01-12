@@ -340,7 +340,7 @@ public class MaximumSubarray {
         
         System.out.println("Count of employees joined in the last 6 months: " + count);
     }	
-``` 
+```
 Determine the positions of the digit '2' in the number provided:
 int num = 627248642;
 Expected output: 1, 3, 8
@@ -365,7 +365,6 @@ public class Indexfind {
     }
 }
 ```
-
 
 Find 2nd non-repeated char from input string, using Java8 stream
 String input = "Java is my programming language"
