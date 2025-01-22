@@ -419,3 +419,75 @@ public class HashMapMain {
 ```
 output : Verified
 
+
+To find duplicate and unique characters, including white spaces and considering case sensitivity in Java 8, you can follow this approach using streams. Here's how you can do it:
+```java
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+public class CharacterFrequency {
+    public static void main(String[] args) {
+        String input = "I am a Java Developer I AM a JAVA Developer";
+
+        // Use Java Streams to count character frequencies
+        Map<Character, Long> frequencyMap = input.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        // Display duplicates (those that have a frequency greater than 1)
+        System.out.println("Duplicate characters:");
+        frequencyMap.entrySet().stream()
+                .filter(entry -> entry.getValue() > 1)
+                .forEach(entry -> System.out.println(entry.getKey() + " : " + entry.getValue()));
+
+        // Display unique characters (those that have a frequency of 1)
+        System.out.println("\nUnique characters:");
+        frequencyMap.entrySet().stream()
+                .filter(entry -> entry.getValue() == 1)
+                .forEach(entry -> System.out.println(entry.getKey()));
+    }
+}
+
+```
+
+In Java 8, you can compare the age and salary of an Employee object using Comparator and lambda expressions. Here's an example of how you can do it:
+
+```java
+import java.util.*;
+
+public class EmployeeComparison {
+
+    public static void main(String[] args) {
+        // Creating a list of Employee objects
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee("Alice", 30, 50000));
+        employees.add(new Employee("Bob", 25, 60000));
+        employees.add(new Employee("Charlie", 30, 50000));
+        employees.add(new Employee("David", 28, 55000));
+
+        // Sorting by age first, then by salary using Comparator
+        employees.sort(Comparator.comparingInt(Employee::getAge)
+                                 .thenComparingDouble(Employee::getSalary));
+
+        // Printing sorted employees
+        employees.forEach(System.out::println);
+
+        // Alternatively, using a custom Comparator
+        Comparator<Employee> customComparator = (e1, e2) -> {
+            // First compare by age
+            int ageComparison = Integer.compare(e1.getAge(), e2.getAge());
+            if (ageComparison != 0) {
+                return ageComparison;
+            }
+            // If age is the same, compare by salary
+            return Double.compare(e1.getSalary(), e2.getSalary());
+        };
+
+        // Sorting using the custom comparator
+        employees.sort(customComparator);
+        System.out.println("\nSorted using custom comparator:");
+        employees.forEach(System.out::println);
+    }
+}
+```
