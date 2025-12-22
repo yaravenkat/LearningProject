@@ -325,10 +325,10 @@ public class MaximumSubarray {
     }	
 ```
 
+
 Determine the positions of the digit '2' in the number provided:
 int num = 627248642;
 Expected output: 1, 3, 8
-
 ```java
 import java.util.stream.IntStream;
 public class Indexfind {
