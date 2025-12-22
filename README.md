@@ -46,7 +46,6 @@ public class TwoSum {
 ``` 
 
 2. What are the challenges you faced while developing the application
-3.UseMemo and useCallback difference in reactjs
 4.Write a Java program that separates 0s on the left hand side and 1s on the right hand side from a random array of 0s and 1.
 ```java
 // Import the necessary Java utility class for working with arrays.
@@ -151,40 +150,24 @@ public class GroupStringsBySameCharacters {
 
 5.Shift all even numbers to left side of array and odd number to right side java
 ```java
-public class EvenOddArray {
+import java.util.*;
+import java.util.stream.*;
+
+public class EvenOddPartition {
     public static void main(String[] args) {
-        int[] arr = {12, 34, 45, 9, 8, 90, 3};
-        rearrangeEvenOdd(arr);
 
-        // Print the modified array
-        for (int num : arr) {
-            System.out.print(num + " ");
-        }
-    }
+        int[] arr = {3, 1, 2, 4, 7, 6, 9, 8};
 
-    public static void rearrangeEvenOdd(int[] arr) {
-        int left = 0;            // Pointer to the left side of the array
-        int right = arr.length - 1;  // Pointer to the right side of the array
+        Map<Boolean, List<Integer>> partitioned =
+                Arrays.stream(arr)
+                      .boxed()
+                      .collect(Collectors.partitioningBy(n -> n % 2 == 0));
 
-        while (left < right) {
-            // If the number at left is even, move left pointer to the right
-            if (arr[left] % 2 == 0) {
-                left++;
-            } 
-            // If the number at right is odd, move right pointer to the left
-            else if (arr[right] % 2 != 0) {
-                right--;
-            } 
-            // If left is odd and right is even, swap them
-            else {
-                // Swap the numbers at left and right
-                int temp = arr[left];
-                arr[left] = arr[right];
-                arr[right] = temp;
-                left++;
-                right--;
-            }
-        }
+        List<Integer> result = new ArrayList<>();
+        result.addAll(partitioned.get(true));   // evens first
+        result.addAll(partitioned.get(false));  // odds next
+
+        System.out.println(result);
     }
 }
 ``` 
