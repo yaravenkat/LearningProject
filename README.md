@@ -1,7 +1,7 @@
 # My Learnings
 
 
-1. You are given an input array and a target sum. Your task is to find two indices in the array whose corresponding values sum up to the target.
+1.**You are given an input array and a target sum. Your task is to find two indices in the array whose corresponding values sum up to the target.**
 
 Input:
 
@@ -45,8 +45,7 @@ public class TwoSum {
   }
 ``` 
 
-2. What are the challenges you faced while developing the application
-4.Write a Java program that separates 0s on the left hand side and 1s on the right hand side from a random array of 0s and 1.
+4.**Write a Java program that separates 0s on the left hand side and 1s on the right hand side from a random array of 0s and 1**.
 ```java
 // Import the necessary Java utility class for working with arrays.
 import java.util.Arrays;
@@ -101,11 +100,11 @@ public class Main {
 ``` 
 
 
-We have a input array as
+**We have a input array as
 
 String arr[] = { “abcd”, “java”, “dcba”, “ajav”, “xyz”, “epam”, “pame”, “aepm” };
 
-Kindly write a java program for following output
+Kindly write a java program for following output**
 
 Output:
 
@@ -148,7 +147,7 @@ public class GroupStringsBySameCharacters {
 }
 ``` 
 
-5.Shift all even numbers to left side of array and odd number to right side java
+5.**Shift all even numbers to left side of array and odd number to right side java**
 ```java
 import java.util.*;
 import java.util.stream.*;
@@ -172,7 +171,7 @@ public class EvenOddPartition {
 }
 ``` 
 
-5 .Here's the Java program that checks if a given string has balanced brackets:
+5 .**Here's the Java program that checks if a given string has balanced brackets**:
 ```java
 import java.util.Stack;
 
@@ -220,7 +219,7 @@ public class BalancedBrackets {
 }
 ``` 
 
-6. what is the output for the below
+6. **what is the output for the bel**ow
 ```java
 public void test(){
     try{
@@ -237,7 +236,7 @@ public void test(){
 ``` 
 output : 1,2,4
 
-7. what is the output for the below
+7. **what is the output for the below**
 ```java
 public class Employee {
     private String firstName;
@@ -284,7 +283,7 @@ ghi
 2
 
 
-8.Given an integer array "nums", find the largest sum, from a arrya/subarray and return its sum.
+8.**Given an integer array "nums", find the largest sum, from a arrya/subarray and return its sum**.
 ```java
 public class MaximumSubarray {
     public static void main(String[] args) {
@@ -315,7 +314,7 @@ public class MaximumSubarray {
 ``` 
 
 
-9. to get the employes count who joined last 6 months
+9. **to get the employes count who joined last 6 months**
    ```java
    long count = Stream.concat(list1.stream(), list2.stream()) // Concatenate the streams
             .filter(e -> e.getJoiningDate().isAfter(LocalDate.now().minusMonths(6))) // Filter based on date
@@ -326,9 +325,9 @@ public class MaximumSubarray {
 ```
 
 
-Determine the positions of the digit '2' in the number provided:
+**Determine the positions of the digit '2' in the number provided:
 int num = 627248642;
-Expected output: 1, 3, 8
+Expected output: 1, 3, 8**
 ```java
 import java.util.stream.IntStream;
 public class Indexfind {
@@ -351,9 +350,9 @@ public class Indexfind {
 }
 ```
 
-Find 2nd non-repeated char from input string, using Java8 stream
+**Find 2nd non-repeated char from input string, using Java8 stream
 String input = "Java is my programming language"
-Output = v
+Output = v**
 ```java
 import java.util.*;
 import java.util.stream.Collectors;
@@ -376,7 +375,7 @@ public class SecondNonRepeat {
     }
 }
 ```
-What is the output for the below program
+**What is the output for the below program**
 ```java
 package org.example;
 
@@ -403,7 +402,7 @@ public class HashMapMain {
 output : Verified
 
 
-To find duplicate and unique characters, including white spaces and considering case sensitivity in Java 8, you can follow this approach using streams. Here's how you can do it:
+**To find duplicate and unique characters, including white spaces and considering case sensitivity in Java 8, you can follow this approach using streams. Here's how you can do it:**
 ```java
 import java.util.*;
 import java.util.function.Function;
@@ -434,7 +433,7 @@ public class CharacterFrequency {
 
 ```
 
-In Java 8, you can compare the age and salary of an Employee object using Comparator and lambda expressions. Here's an example of how you can do it:
+**In Java 8, you can compare the age and salary of an Employee object using Comparator and lambda expressions. Here's an example of how you can do it:**
 
 ```java
 import java.util.*;
@@ -472,5 +471,49 @@ public class EmployeeComparison {
         System.out.println("\nSorted using custom comparator:");
         employees.forEach(System.out::println);
     }
+}
+```
+**Write a function that reverses a string**
+
+```java
+public class ReverseString {
+    public static void main(String[] args) {
+        String text = "Java";
+        String reversed = "";
+
+        for (int i = text.length() - 1; i >= 0; i--) {
+            reversed = reversed + text.charAt(i);
+        }
+
+        System.out.println(reversed);
+    }
+}
+
+```java
+public class StringReverse {
+	public char[] reverseString(char[] a) {
+        char temp = ' ';
+        int length = a.length;
+        System.out.println("Length="+length);
+        int j=length-1;
+        for(int i=0;i<=(length/2)-1;i++){
+            
+            if(i!=j){
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+                j--;
+            }else{
+                break;
+            }    
+        }
+        return a;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StringReverse m = new StringReverse();
+		char[] a = {'h','e','l','l','o'};
+		System.out.println(m.reverseString(a));
+	}
 }
 ```
