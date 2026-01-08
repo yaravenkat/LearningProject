@@ -55,7 +55,7 @@
 
 ---
 
-## ⚙️ Coding / Problem-Solving (EPAM Favorites)
+## ⚙️ Coding / Problem-Solving
 
 41. Second highest number in an array  
 42. Reverse Linked List (iterative + recursive)  
