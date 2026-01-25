@@ -189,3 +189,36 @@ public class MergeIntervals {
     }
 }
 ```
+**Given a list of integers, return all unique pairs whose sum equals a target**
+Input:  nums = [1, 2, 3, 4, 5, 6, 7]
+Target: 8
+Output: [[1,7], [2,6], [3,5]]
+
+```java
+import java.util.*;
+
+public class PairSumEasy {
+
+    public static List<List<Integer>> findPairs(int[] nums, int target) {
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+
+                if (nums[i] + nums[j] == target) {
+                    result.add(Arrays.asList(nums[i], nums[j]));
+                }
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        int target = 8;
+
+        System.out.println(findPairs(nums, target));
+    }
+}
+```
