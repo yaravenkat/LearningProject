@@ -75,3 +75,117 @@ class Solution {
     }
 }
 ```
+**Employee count in each department**
+
+SELECT
+    d.department_id,
+    d.dept_name,
+    COUNT(e.emp_id) AS employee_count
+FROM departments d
+LEFT JOIN employees e
+    ON d.department_id = e.dept_id
+GROUP BY
+    d.department_id,
+    d.dept_name
+ORDER BY
+    d.department_id;
+    
+```
+**Find the length of the longest substring without repeating characters**
+```java
+import java.util.HashSet;
+import java.util.Set;
+
+public class LongestSubstring {
+    public static int lengthOfLongestSubstring(String s) {
+
+        Set<Character> set = new HashSet<>();
+        int left = 0, maxLength = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+            while (set.contains(s.charAt(right))) {
+                set.remove(s.charAt(left));
+                left++;
+            }
+
+            set.add(s.charAt(right));
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(lengthOfLongestSubstring("abcabcbb")); // 3
+    }
+}
+```
+**Employees earning more than their manager**
+
+SELECT 
+    e.name AS employee_name,
+    e.salary AS employee_salary,
+    m.name AS manager_name,
+    m.salary AS manager_salary
+FROM Employee e
+JOIN Employee m
+    ON e.manager_id = m.id
+WHERE e.salary > m.salary;
+```
+## Employees earning more than their manager
+
+```sql
+SELECT
+    e.name   AS employee_name,
+    e.salary AS employee_salary,
+    m.name   AS manager_name,
+    m.salary AS manager_salary
+FROM Employee e
+JOIN Employee m
+    ON e.manager_id = m.id
+WHERE e.salary > m.salary;
+```
+**Merge all overlapping intervals and return non-overlapping intervals**
+```java
+import java.util.*;
+
+public class MergeIntervals {
+
+    public static int[][] merge(int[][] intervals) {
+
+        // Step 1: Sort intervals by start time
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+
+        List<int[]> result = new ArrayList<>();
+
+        int start = intervals[0][0];
+        int end   = intervals[0][1];
+
+        // Step 2: Merge overlapping intervals
+        for (int i = 1; i < intervals.length; i++) {
+
+            if (intervals[i][0] <= end) {
+                end = Math.max(end, intervals[i][1]);
+            } else {
+                result.add(new int[]{start, end});
+                start = intervals[i][0];
+                end   = intervals[i][1];
+            }
+        }
+
+        // Add last interval
+        result.add(new int[]{start, end});
+
+        return result.toArray(new int[result.size()][]);
+    }
+
+    public static void main(String[] args) {
+        int[][] intervals = {{1,3},{2,6},{8,10},{15,18}};
+        int[][] merged = merge(intervals);
+
+        for (int[] i : merged) {
+            System.out.println(Arrays.toString(i));
+        }
+    }
+}
+```
